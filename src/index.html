@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/kerala-icon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#16a34a" />
+    <meta name="description" content="Kerala Travel Tracker - Track your journeys across God's Own Country" />
+    <meta name="keywords" content="Kerala, travel, tracker, carbon footprint, backwaters, tourism" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- Apple PWA -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Kerala Travel" />
+    <link rel="apple-touch-icon" href="/kerala-icon-192.png" />
+    
+    <!-- Splash Screen -->
+    <style>
+      #splash-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(135deg, #16a34a 0%, #15803d 100%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+        color: white;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      
+      #splash-logo {
+        width: 80px;
+        height: 80px;
+        background: white;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 36px;
+        margin-bottom: 20px;
+        animation: pulse 2s infinite;
+      }
+      
+      @keyframes pulse {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+      }
+      
+      #splash-text {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 8px;
+      }
+      
+      #splash-subtitle {
+        font-size: 16px;
+        opacity: 0.9;
+        text-align: center;
+        max-width: 280px;
+      }
+    </style>
+    
+    <title>Kerala Travel Tracker</title>
+  </head>
+  <body>
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+      <div id="splash-logo">🌴</div>
+      <div id="splash-text">Kerala Travel</div>
+      <div id="splash-subtitle">Track your journeys across God's Own Country</div>
+    </div>
+    
+    <div id="root"></div>
+    
+    <script>
+      // Hide splash screen when app loads
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const splash = document.getElementById('splash-screen');
+          if (splash) {
+            splash.style.opacity = '0';
+            splash.style.transition = 'opacity 0.5s ease-out';
+            setTimeout(() => {
+              splash.remove();
+            }, 500);
+          }
+        }, 1500);
+      });
+    </script>
+    
+    <script type="module" src="/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug Kerala Travel Auth</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #f0f9f0 0%, #e8f5e8 100%);
+        }
+        .test-section {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-button {
+            background: #059669;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 10px 10px 10px 0;
+        }
+        .test-button:hover {
+            background: #047857;
+        }
+        .result {
+            background: #f3f4f6;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 10px 0;
+            font-family: monospace;
+            white-space: pre-wrap;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .success { border-color: #10b981; background: #f0fdf4; }
+        .error { border-color: #ef4444; background: #fef2f2; }
+        .form-group {
+            margin: 10px 0;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🌴 Kerala Travel Tracker - Auth Debug</h1>
+    
+    <div class="test-section">
+        <h2>🔍 Backend Health Check</h2>
+        <button class="test-button" onclick="testHealth()">Test Backend Health</button>
+        <div id="health-result" class="result" style="display: none;"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>📝 Test User Registration</h2>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="signup-email" value="test@kerala.com" />
+        </div>
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" id="signup-password" value="test123456" />
+        </div>
+        <div class="form-group">
+            <label>Name:</label>
+            <input type="text" id="signup-name" value="Test User" />
+        </div>
+        <button class="test-button" onclick="testSignUp()">Test Sign Up</button>
+        <div id="signup-result" class="result" style="display: none;"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔐 Test User Sign In</h2>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="signin-email" value="test@kerala.com" />
+        </div>
+        <div class="form-group">
+            <label>Password:</label>
+            <input type="password" id="signin-password" value="test123456" />
+        </div>
+        <button class="test-button" onclick="testSignIn()">Test Sign In</button>
+        <div id="signin-result" class="result" style="display: none;"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>🔄 Test Password Reset</h2>
+        <div class="form-group">
+            <label>Email:</label>
+            <input type="email" id="reset-email" value="test@kerala.com" />
+        </div>
+        <button class="test-button" onclick="testPasswordReset()">Test Reset Password</button>
+        <div id="reset-result" class="result" style="display: none;"></div>
+    </div>
+
+    <script>
+        const BASE_URL = 'https://dubyklstpzpuvjdfztsa.supabase.co/functions/v1/make-server-561789f4';
+        const ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1YnlrbHN0cHpwdXZqZGZ6dHNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg4Njc2NjAsImV4cCI6MjA3NDQ0MzY2MH0.bJpGzkJ1v_vdNWYxRlbn_gYECduJuTOs_AxlfV4ozCI';
+
+        function showResult(elementId, data, isSuccess = true) {
+            const element = document.getElementById(elementId);
+            element.style.display = 'block';
+            element.className = `result ${isSuccess ? 'success' : 'error'}`;
+            element.textContent = JSON.stringify(data, null, 2);
+        }
+
+        async function apiCall(endpoint, options = {}) {
+            const url = `${BASE_URL}${endpoint}`;
+            console.log('🔍 Making API call to:', url);
+            console.log('📦 Request options:', options);
+            
+            const config = {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${ANON_KEY}`,
+                    ...options.headers
+                },
+                ...options
+            };
+
+            try {
+                const response = await fetch(url, config);
+                console.log('📡 Response status:', response.status);
+                console.log('📡 Response headers:', Object.fromEntries(response.headers.entries()));
+                
+                const data = await response.json();
+                console.log('📄 Response data:', data);
+                
+                return {
+                    status: response.status,
+                    ok: response.ok,
+                    data: data
+                };
+            } catch (error) {
+                console.error('❌ API Error:', error);
+                return {
+                    status: 0,
+                    ok: false,
+                    error: error.message
+                };
+            }
+        }
+
+        async function testHealth() {
+            console.log('🩺 Testing backend health...');
+            const result = await apiCall('/health');
+            showResult('health-result', result, result.ok);
+        }
+
+        async function testSignUp() {
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            const name = document.getElementById('signup-name').value;
+            
+            console.log('📝 Testing sign up with:', { email, password: '***', name });
+            
+            const requestBody = { email, password, name };
+            console.log('📦 Request body:', requestBody);
+            
+            const result = await apiCall('/auth/signup', {
+                method: 'POST',
+                body: JSON.stringify(requestBody)
+            });
+            
+            showResult('signup-result', result, result.ok);
+        }
+
+        async function testSignIn() {
+            const email = document.getElementById('signin-email').value;
+            const password = document.getElementById('signin-password').value;
+            
+            console.log('🔐 Testing sign in with Supabase directly...');
+            
+            // Test with Supabase client directly
+            try {
+                const { createClient } = await import('https://esm.sh/@supabase/supabase-js@2');
+                const supabase = createClient(
+                    'https://dubyklstpzpuvjdfztsa.supabase.co',
+                    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR1YnlrbHN0cHpwdXZqZGZ6dHNhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg4Njc2NjAsImV4cCI6MjA3NDQ0MzY2MH0.bJpGzkJ1v_vdNWYxRlbn_gYECduJuTOs_AxlfV4ozCI'
+                );
+                
+                const { data, error } = await supabase.auth.signInWithPassword({
+                    email,
+                    password
+                });
+                
+                const result = {
+                    supabase_result: { data, error },
+                    status: error ? 400 : 200,
+                    ok: !error
+                };
+                
+                showResult('signin-result', result, !error);
+            } catch (error) {
+                showResult('signin-result', { error: error.message }, false);
+            }
+        }
+
+        async function testPasswordReset() {
+            const email = document.getElementById('reset-email').value;
+            
+            console.log('🔄 Testing password reset for:', email);
+            
+            const result = await apiCall('/auth/reset-password', {
+                method: 'POST',
+                body: JSON.stringify({ email })
+            });
+            
+            showResult('reset-result', result, result.ok);
+        }
+
+        // Auto-test health on page load
+        window.addEventListener('load', () => {
+            setTimeout(testHealth, 1000);
+        });
+    </script>
+</body>
+</html>
