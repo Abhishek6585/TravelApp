@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    android:opacity="opaque">
+    
+    <!-- Background color -->
+    <item android:drawable="@color/splash_background" />
+    
+    <!-- Center the splash icon -->
+    <item android:gravity="center">
+        <bitmap
+            android:gravity="center"
+            android:src="@drawable/splash_icon" />
+    </item>
+    
+    <!-- Kerala tagline at bottom -->
+    <item android:gravity="bottom|center_horizontal"
+          android:bottom="120dp">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/transparent" />
+        </shape>
+    </item>
+</layer-list>

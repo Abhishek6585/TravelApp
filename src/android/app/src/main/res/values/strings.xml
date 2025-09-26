@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Kerala Travel Tracker</string>
+    <string name="title_activity_main">Kerala Travel Tracker</string>
+    <string name="package_name">com.kerala.traveltracker</string>
+    <string name="custom_url_scheme">com.kerala.traveltracker</string>
+    
+    <!-- App Description -->
+    <string name="app_description">Track your Kerala journey with real-time insights and carbon footprint analysis</string>
+    
+    <!-- Kerala Specific -->
+    <string name="kerala_tagline">God\'s Own Country, Your Own Journey</string>
+    <string name="kerala_welcome">Welcome to Kerala Travel Tracker</string>
+    
+    <!-- Permissions -->
+    <string name="location_permission_rationale">Location permission is needed to track your Kerala travels and provide location-based insights.</string>
+    <string name="camera_permission_rationale">Camera permission is needed to capture your travel moments and add photos to your trips.</string>
+    <string name="storage_permission_rationale">Storage permission is needed to save your travel data and export trip reports.</string>
+    
+    <!-- Emergency Services -->
+    <string name="emergency_police">Kerala Police: 100</string>
+    <string name="emergency_ambulance">Ambulance: 108</string>
+    <string name="emergency_fire">Fire Service: 101</string>
+    <string name="emergency_tourist_helpline">Kerala Tourism Helpline: 1364</string>
+    
+    <!-- Transport Modes -->
+    <string name="transport_boat">Boat</string>
+    <string name="transport_auto">Auto-rickshaw</string>
+    <string name="transport_bus">Bus</string>
+    <string name="transport_train">Train</string>
+    <string name="transport_car">Car</string>
+    <string name="transport_bike">Bike</string>
+    <string name="transport_walk">Walk</string>
+    
+    <!-- Popular Destinations -->
+    <string name="dest_alappuzha">Alappuzha Backwaters</string>
+    <string name="dest_munnar">Munnar Hills</string>
+    <string name="dest_kochi">Kochi Heritage</string>
+    <string name="dest_wayanad">Wayanad Wildlife</string>
+    <string name="dest_kovalam">Kovalam Beach</string>
+    <string name="dest_thekkady">Thekkady Forest</string>
+    
+    <!-- Notifications -->
+    <string name="notification_channel_name">Kerala Travel Updates</string>
+    <string name="notification_channel_description">Get updates about your Kerala travels</string>
+    
+    <!-- Data Export -->
+    <string name="export_data_title">Export Travel Data</string>
+    <string name="export_data_description">Download all your Kerala travel data</string>
+    
+    <!-- Error Messages -->
+    <string name="error_network">Please check your internet connection</string>
+    <string name="error_location">Unable to get location. Please enable GPS</string>
+    <string name="error_generic">Something went wrong. Please try again</string>
+    
+    <!-- Success Messages -->
+    <string name="success_trip_added">Trip added successfully!</string>
+    <string name="success_data_exported">Travel data exported successfully</string>
+    <string name="success_profile_updated">Profile updated successfully</string>
+    
+    <!-- Landing Page -->
+    <string name="get_started">Get Started</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="dont_have_account">Don\'t have an account? Sign up</string>
+    <string name="already_have_account">Already have an account? Sign in</string>
+    <string name="forgot_password">Forgot Password?</string>
+    
+    <!-- Authentication -->
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="city">City</string>
+    <string name="sign_in_success">Welcome back to Kerala Travel Tracker!</string>
+    <string name="sign_up_success">Welcome to Kerala Travel Tracker!</string>
+    <string name="sign_in_error">Invalid email or password</string>
+    <string name="password_reset_sent">Password reset link sent to your email</string>
+    <string name="email_hint">Enter your email address</string>
+    <string name="password_hint">Enter your password</string>
+    <string name="first_name_hint">Enter your first name</string>
+    <string name="last_name_hint">Enter your last name</string>
+    <string name="city_hint">Enter your city</string>
+    
+    <!-- Navigation -->
+    <string name="home">Home</string>
+    <string name="trips">Trips</string>
+    <string name="insights">Insights</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    
+    <!-- Home Screen -->
+    <string name="welcome_back">Welcome back</string>
+    <string name="current_location">Current Location</string>
+    <string name="recent_trips">Recent Trips</string>
+    <string name="add_trip">Add Trip</string>
+    <string name="popular_routes">Popular Routes</string>
+    <string name="weather_today">Today\'s Weather</string>
+    
+    <!-- Trip Management -->
+    <string name="origin">Origin</string>
+    <string name="destination">Destination</string>
+    <string name="transport_mode">Transport Mode</string>
+    <string name="date">Date</string>
+    <string name="distance">Distance</string>
+    <string name="carbon_footprint">Carbon Footprint</string>
+    <string name="status">Status</string>
+    <string name="completed">Completed</string>
+    <string name="ongoing">Ongoing</string>
+    <string name="planned">Planned</string>
+    <string name="save_trip">Save Trip</string>
+    <string name="cancel">Cancel</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    
+    <!-- Profile -->
+    <string name="edit_profile">Edit Profile</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="language_settings">Language Settings</string>
+    <string name="theme_settings">Theme Settings</string>
+    <string name="privacy_security">Privacy &amp; Security</string>
+    <string name="help_faq">Help &amp; FAQ</string>
+    <string name="about_app">About App</string>
+    <string name="sign_out">Sign Out</string>
+    
+    <!-- Settings -->
+    <string name="notifications">Notifications</string>
+    <string name="location_services">Location Services</string>
+    <string name="data_sync">Data Sync</string>
+    <string name="export_data">Export Data</string>
+    <string name="delete_account">Delete Account</string>
+    
+    <!-- Insights -->
+    <string name="total_trips">Total Trips</string>
+    <string name="total_distance">Total Distance</string>
+    <string name="total_carbon">Total Carbon Footprint</string>
+    <string name="most_used_transport">Most Used Transport</string>
+    <string name="this_month">This Month</string>
+    <string name="this_year">This Year</string>
+    <string name="all_time">All Time</string>
+    
+    <!-- Common -->
+    <string name="loading">Loading...</string>
+    <string name="retry">Retry</string>
+    <string name="close">Close</string>
+    <string name="save">Save</string>
+    <string name="update">Update</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="finish">Finish</string>
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    
+    <!-- Validation Messages -->
+    <string name="email_required">Email is required</string>
+    <string name="password_required">Password is required</string>
+    <string name="first_name_required">First name is required</string>
+    <string name="last_name_required">Last name is required</string>
+    <string name="city_required">City is required</string>
+    <string name="invalid_email">Please enter a valid email address</string>
+    <string name="password_too_short">Password must be at least 6 characters</string>
+    <string name="passwords_do_not_match">Passwords do not match</string>
+    
+    <!-- Forgot Password -->
+    <string name="reset_password">Reset Password</string>
+    <string name="back_to_sign_in">Back to Sign In</string>
+    <string name="forgot_password_description">Enter your email address and we\'ll send you a link to reset your password.</string>
+    <string name="secure_reset">Secure Reset</string>
+    <string name="secure_reset_description">Your password reset is protected with encryption</string>
+    
+    <!-- Home Screen -->
+    <string name="no_trips_yet">No trips yet. Start your Kerala adventure!</string>
+    <string name="view_all_trips">View All</string>
+    
+    <!-- Add icon description -->
+    <string name="add_icon">Add</string>
+</resources>

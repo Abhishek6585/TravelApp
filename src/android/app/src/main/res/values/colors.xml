@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Kerala Travel Tracker Color Scheme -->
+    <color name="colorPrimary">#16a34a</color>
+    <color name="colorPrimaryDark">#15803d</color>
+    <color name="colorAccent">#059669</color>
+    
+    <!-- Background Colors -->
+    <color name="ic_launcher_background">#16a34a</color>
+    <color name="splash_background">#16a34a</color>
+    
+    <!-- Status Bar -->
+    <color name="status_bar_color">#15803d</color>
+    
+    <!-- Kerala Theme Colors -->
+    <color name="kerala_green">#16a34a</color>
+    <color name="kerala_gold">#d97706</color>
+    <color name="kerala_blue">#0284c7</color>
+    <color name="kerala_white">#ffffff</color>
+    <color name="kerala_dark">#1f2937</color>
+    
+    <!-- Common Colors -->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="transparent">#00000000</color>
+    <color name="gray_50">#f9fafb</color>
+    <color name="gray_100">#f3f4f6</color>
+    <color name="gray_200">#e5e7eb</color>
+    <color name="gray_300">#d1d5db</color>
+    <color name="gray_400">#9ca3af</color>
+    <color name="gray_500">#6b7280</color>
+    <color name="gray_600">#4b5563</color>
+    <color name="gray_700">#374151</color>
+    <color name="gray_800">#1f2937</color>
+    <color name="gray_900">#111827</color>
+    
+    <!-- Status Colors -->
+    <color name="green_500">#10b981</color>
+    <color name="blue_500">#3b82f6</color>
+    <color name="orange_500">#f59e0b</color>
+    <color name="red_500">#ef4444</color>
+    
+    <!-- Background -->
+    <color name="background">#ffffff</color>
+</resources>

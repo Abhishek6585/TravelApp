@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <!-- Background gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="@color/kerala_green"
+                android:centerColor="@color/kerala_blue"
+                android:endColor="@color/kerala_gold"
+                android:angle="135"
+                android:type="linear" />
+        </shape>
+    </item>
+    
+    <!-- Overlay to soften the gradient -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#88FFFFFF" />
+        </shape>
+    </item>
+    
+</layer-list>

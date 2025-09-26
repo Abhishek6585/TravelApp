@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="120dp"
+    android:height="120dp"
+    android:viewportWidth="120"
+    android:viewportHeight="120">
+    
+    <!-- Background circle -->
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M60,60m-50,0a50,50 0,1 1,100 0a50,50 0,1 1,-100 0" />
+    
+    <!-- Kerala palm tree icon -->
+    <group android:translateX="60" android:translateY="60">
+        <!-- Palm tree trunk -->
+        <path
+            android:fillColor="#8B4513"
+            android:pathData="M-2,-20L2,-20L3,20L-3,20Z" />
+        
+        <!-- Palm fronds -->
+        <path
+            android:fillColor="@color/kerala_green"
+            android:pathData="M-1,-20Q-15,-30 -20,-35Q-18,-32 -10,-25Q-8,-22 -1,-20Z" />
+        <path
+            android:fillColor="@color/kerala_green"
+            android:pathData="M1,-20Q15,-30 20,-35Q18,-32 10,-25Q8,-22 1,-20Z" />
+        <path
+            android:fillColor="@color/kerala_green"
+            android:pathData="M-1,-20Q-25,-15 -30,-10Q-27,-12 -15,-18Q-8,-20 -1,-20Z" />
+        <path
+            android:fillColor="@color/kerala_green"
+            android:pathData="M1,-20Q25,-15 30,-10Q27,-12 15,-18Q8,-20 1,-20Z" />
+        <path
+            android:fillColor="@color/kerala_green"
+            android:pathData="M-1,-20Q-20,0 -25,5Q-22,2 -12,-10Q-6,-15 -1,-20Z" />
+        <path
+            android:fillColor="@color/kerala_green"
+            android:pathData="M1,-20Q20,0 25,5Q22,2 12,-10Q6,-15 1,-20Z" />
+        
+        <!-- Coconuts -->
+        <circle
+            android:fillColor="#D2691E"
+            android:cx="-8"
+            android:cy="-15"
+            android:radius="2" />
+        <circle
+            android:fillColor="#D2691E"
+            android:cx="8"
+            android:cy="-15"
+            android:radius="2" />
+        <circle
+            android:fillColor="#D2691E"
+            android:cx="0"
+            android:cy="-18"
+            android:radius="2" />
+    </group>
+    
+    <!-- Water waves at bottom -->
+    <path
+        android:fillColor="@color/kerala_blue"
+        android:pathData="M10,90Q30,85 50,90T90,90L90,100Q70,95 50,100T10,100Z" />
+    <path
+        android:fillColor="@color/kerala_blue"
+        android:fillAlpha="0.7"
+        android:pathData="M15,95Q35,90 55,95T95,95L95,105Q75,100 55,105T15,105Z" />
+</vector>
